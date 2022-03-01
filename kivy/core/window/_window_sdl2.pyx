@@ -74,6 +74,9 @@ cdef class _WindowSDL2Storage:
 
     def die(self):
         raise RuntimeError(<bytes> SDL_GetError())
+        
+    def get_window_id(self):
+        return SDL_GetWindowID(self.win)
 
     def setup_window(self, x, y, width, height, borderless, fullscreen,
                      resizable, state, gl_backend):
